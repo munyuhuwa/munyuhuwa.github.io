@@ -33,10 +33,27 @@ function loadFinished() {
 	document.querySelectorAll('.gacha').forEach(target => {
 		target.addEventListener('click', () => {
 			let $slogan = document.querySelectorAll('.slogan');
+			let ku = '';
 			const lens = { 0: 5, 1: 7, 2: 5, };
 			for (let i = 0; i < Object.keys(lens).length; ++i) {
-				$slogan[i].textContent = drawGacha(lens[i]);
+				let text = drawGacha(lens[i]);
+				ku += text + ' ';
+				$slogan[i].textContent = text;
 			}
+			console.log(ku);
+			$tweetContainer = document.getElementById('tweet-container');
+			while ($tweetContainer.firstChild) {
+				$tweetContainer.removeChild($tweetContainer.firstChild);
+			}
+			twttr.widgets.createShareButton(
+				"",
+				$tweetContainer,
+				{
+					size: "large",
+					text: ku,
+					via: "munyuhuwa",
+				}
+			);
 		});
 	});
 };

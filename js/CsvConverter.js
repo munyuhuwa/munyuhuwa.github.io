@@ -5,6 +5,7 @@ class CsvConverter {
 		let arr = [];
 		const lines = csv.split(this.NEWLINE);
 		for (let line of lines) {
+			line = line.replace(/\r?\n/g, '');
 			arr.push(line.split(this.SEPARATOR));
 		}
 		return arr;
