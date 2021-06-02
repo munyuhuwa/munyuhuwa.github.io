@@ -3,13 +3,22 @@
 		<meta charset="UTF-8" />
 		<meta lang="ja" />
 		<title>麻雀標語ガチャ</title>
+		<link rel="stylesheet" href="./css/mahjong-slogan.css" />
 		<script type="text/javascript" src="./js/CsvConverter.js"></script>
 		<script type="text/javascript" src="./js/MahjongSlogan.js"></script>
 	</head>
 	<body>
-		<h1>麻雀標語ガチャ</h1>
+		<section>
+			<h1>麻雀標語ガチャ</h1>
+		</section>
 		<section>
 			<div>
+				<div id="tweet-container"></div>
+				<script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+		</section>
+		<section class="gacha-wrapper">
+			<div class="slogan-wrapper">
 				<div>
 					<div class="slogan"></div>
 					<div><input type="checkbox" class="protect-switch" id="protect-switch-1" /><label for="protect-switch-1">保護</label></div>
@@ -25,12 +34,6 @@
 			</div>
 			<div>
 				<button type="button" class="gacha">ガチャ</button>
-			</div>
-		</section>
-		<section>
-			<div>
-				<div id="tweet-container"></div>
-				<script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</div>
 		</section>
 	</body>
