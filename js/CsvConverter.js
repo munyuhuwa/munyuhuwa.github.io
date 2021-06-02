@@ -1,4 +1,4 @@
-class CsvConverter {
+export class CsvConverter {
 	static NEWLINE = /\r?\n/;
 	static SEPARATOR = ',';
 	static csvToArray(csv) {

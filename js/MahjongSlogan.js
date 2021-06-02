@@ -1,3 +1,5 @@
+import { CsvConverter, } from './CsvConverter.js';
+
 let sloganParts = {
 	5: [],
 	7: [],
@@ -15,6 +17,9 @@ function prepareSloganParts() {
 					sloganParts[7].push(row[1]);
 				}
 			}
+		})
+		.catch((error) => {
+			alert(error);
 		})
 		.then(updateSlogan);
 }
@@ -44,7 +49,7 @@ function updateSlogan() {
 	}
 	console.log(ku);
 	ku += '\n【麻雀標語ガチャ】';
-	$tweetContainer = document.getElementById('tweet-container');
+	const $tweetContainer = document.getElementById('tweet-container');
 	while ($tweetContainer.firstChild) {
 		$tweetContainer.removeChild($tweetContainer.firstChild);
 	}
