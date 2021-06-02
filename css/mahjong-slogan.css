@@ -1,9 +1,10 @@
 .slogan-wrapper {
-	display: grid;
+	display: flex;
 	grid-template-columns: repeat(3, 120px);
 	justify-items: center;
 	align-items: flex-start;
 	text-combine-upright: digits 2;
+	flex-direction: row-reverse;
 }
 
 .slogan {
