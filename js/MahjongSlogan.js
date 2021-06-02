@@ -33,14 +33,21 @@ function loadFinished() {
 	document.querySelectorAll('.gacha').forEach(target => {
 		target.addEventListener('click', () => {
 			let $slogan = document.querySelectorAll('.slogan');
+			let $protectSwitch = document.querySelectorAll('.protect-switch');
 			let ku = '';
 			const lens = { 0: 5, 1: 7, 2: 5, };
 			for (let i = 0; i < Object.keys(lens).length; ++i) {
-				let text = drawGacha(lens[i]);
-				ku += text + ' ';
-				$slogan[i].textContent = text;
+				let part;
+				if ($protectSwitch[i].checked) {
+					part = $slogan[i].textContent;
+				} else {
+					part = drawGacha(lens[i]);
+				}
+				ku += part + ' ';
+				$slogan[i].textContent = part;
 			}
 			console.log(ku);
+			ku += '\n【麻雀標語ガチャ】';
 			$tweetContainer = document.getElementById('tweet-container');
 			while ($tweetContainer.firstChild) {
 				$tweetContainer.removeChild($tweetContainer.firstChild);
