@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>リーグ戦結果予想 | munyuhuwa</title>
+    <link rel="stylesheet" href="./css/league.css" />
+</head>
+<body>
+	<header>
+		<h1>リーグ戦結果予想</h1>
+	</header>
+	<section>
+        <h2>入力</h2>
+        <label for="n-games-left">残りゲーム数</label>
+        <input type="number" id="n-games-left" value="56" min="0" step="1">
+        <label for="current-pts">現在の成績 (チームごとに改行)</label>
+        <textarea id="current-pts" rows="8">
+480.7
+173.8
+-39.0
+-39.2
+-45.5
+-63.7
+-222.9
+-244.2
+        </textarea>
+        <button type="button" id="do-calc">計算</button>
+	</section>
+    <section>
+        <h2>出力</h2>
+        <p>→順位/↓チーム</p>
+        <textarea id="output" rows="8"></textarea>
+    </section>
+    <section>
+        <p>半荘収支の分散は<a href="https://note.com/meaningless777/n/n7406c82813df">こちら</a>を参考にさせていただきました。</p>
+        <h3>注意事項</h3>
+        <ul>
+            <li>残りゲーム数が少ないと誤差が大きくなります。</li>
+            <li>どのチームも強さが等しいと仮定しています。</li>
+            <li>現在の成績を元に上振れ狙い/安定志向でプレイした場合の1ゲームごとの成績分布への影響は考慮されていません。</li>
+            <li>チーム間の相性は考慮されていません。</li>
+        </ul>
+    </section>
+    <script src="./js/league.js"></script>
+</body>
+</html>
