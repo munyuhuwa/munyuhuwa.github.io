@@ -1,0 +1,82 @@
+.slogan-wrapper {
+	display: flex;
+	grid-template-columns: repeat(3, 120px);
+	justify-items: center;
+	align-items: flex-start;
+	text-combine-upright: digits 2;
+	flex-direction: row-reverse;
+}
+
+.slogan {
+	height: 540px;
+	writing-mode: vertical-rl;
+	font-size: 60px;
+	line-height: 2em;
+	background-color: lightgoldenrodyellow;
+}
+
+.gacha-wrapper {
+	width: 360px;
+	margin: auto;
+}
+
+input[type='checkbox'] {
+	display: none;
+	position: relative;
+}
+
+input[type='checkbox'] + label::after {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	display: block;
+	width: 100px;
+	margin: 5px;
+	font-size: 24px;
+	line-height: 2em;
+	text-align: center;
+	height: 48px;
+	content: 'On/Off';
+	background-color: gainsboro;
+	border-left: solid 5px black;
+	border-right: solid 5px transparent;
+}
+
+input[type='checkbox']:checked + label::after {
+	background-color: lime;
+	border-left: solid 5px transparent;
+	border-right: solid 5px green;
+}
+
+label {
+	display: block;
+	text-align: center;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	appearance: none;
+}
+
+.gacha {
+	display: block;
+	width: 100%;
+	background-color: maroon;
+	color: wheat;
+	height: 48px;
+	font-size: 24px;
+	line-height: 2em;
+}
+
+section {
+	width: 360px;
+	margin: auto;
+}
+
+body {
+	background-color: palegoldenrod;
+}

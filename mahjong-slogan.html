@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta lang="ja" />
+		<title>麻雀標語ガチャ</title>
+		<link rel="shortcut icon" href="./favicon.ico" />
+		<link rel="stylesheet" href="./css/mahjong-slogan.css" />
+		<!-- <script type="module" src="./js/CsvConverter.js"></script> -->
+		<script type="module" src="./js/MahjongSlogan.js" crossorigin="use-credentials"></script>
+	</head>
+	<body>
+		<section>
+			<h1>麻雀標語ガチャ</h1>
+		</section>
+		<section>
+			<div>
+				<div id="tweet-container"></div>
+				<script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+		</section>
+		<section class="gacha-wrapper">
+			<div class="slogan-wrapper">
+				<div>
+					<div class="slogan">○○○○○</div>
+					<div><input type="checkbox" class="protect-switch" id="protect-switch-1" /><label for="protect-switch-1">保護</label></div>
+				</div>
+				<div>
+					<div class="slogan">○○○○○○○</div>
+					<div><input type="checkbox" class="protect-switch" id="protect-switch-2" /><label for="protect-switch-2">保護</label></div>
+				</div>
+				<div>
+					<div class="slogan">○○○○○</div>
+					<div><input type="checkbox" class="protect-switch" id="protect-switch-3" /><label for="protect-switch-3">保護</label></div>
+				</div>				
+			</div>
+			<div>
+				<button type="button" class="gacha">ガチャ</button>
+			</div>
+		</section>
+	</body>
+</html>
