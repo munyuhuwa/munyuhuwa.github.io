@@ -1,0 +1,120 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>334le</title>
+<style>
+.panel-wrap{
+	width:240px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+.panel-wrap>div {
+	height: 80px;
+}
+.key-wrap{
+	width:960px;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+}
+.key-wrap>div {
+	cursor: pointer;
+	height: 80px;
+	text-align: center;
+	border: 8px solid transparent;
+	border-radius: 8px;
+	background-color: gray;
+	margin: 8px;
+}
+
+.panel {
+	display: block;
+	background-color: gray;
+}
+.green{
+	background-color: green;
+}
+.yellow{
+	background-color: yellow;
+}
+.black{
+	background-color: black;
+	color: white;
+}
+</style>
+</head>
+<body>
+	<header>
+		<h1>334le</h1>
+	</header>
+	<section class="panel-wrap">
+		<div class="panel">x</div>
+		<div class="panel">x</div>
+		<div class="panel">x</div>
+	</section>
+	<section class="key-wrap">
+		<div id="enter">Enter</div>
+		<div class="key">0</div>
+		<div class="key">1</div>
+		<div class="key">2</div>
+		<div class="key">3</div>
+		<div class="key">4</div>
+		<div class="key">5</div>
+		<div class="key">6</div>
+		<div class="key">7</div>
+		<div class="key">8</div>
+		<div class="key">9</div>
+		<div id="delete">Delete</div>
+	</section>
+<script>
+var buf = '';
+
+function updatePanels(){
+	let $panels = document.querySelectorAll('.panel')
+	for (let i = 0; i < 3; ++i) {
+		if (buf[i] === undefined){
+			$panels[i].innerText = ''
+		} else {
+			$panels[i].innerText = buf[i] 
+		}
+	}
+}
+
+function checkPanles(){
+	if (buf.length < 3) return
+	let $panels = document.querySelectorAll('.panel')
+	ans=['3','3','4']
+	for (let i = 0; i < 3; ++i) {
+		$panels[i].classList.remove('green')
+		$panels[i].classList.remove('yellow')
+		$panels[i].classList.remove('black')
+		if($panels[i].innerText == ans[i]) {
+			$panels[i].classList.add('green')
+		}else if ($panels[i].innerText == '3' || $panels[i].innerText == '4') {
+			$panels[i].classList.add('yellow')
+		}else{
+			$panels[i].classList.add('black')
+		}
+	}
+}
+
+function addBuf(ch) {
+	if (buf.length < 3) {
+		buf += ch;
+	}
+}
+
+function delBufRight () {
+	buf = buf.substr(0, (buf.length > 3 ? 2 : (buf.length-1)))
+}
+
+let $keys = document.querySelectorAll('.key')
+for (let $key of $keys) {
+	$key.addEventListener('click', function(){addBuf(this.innerText);updatePanels()})
+}
+
+document.querySelector('#enter').addEventListener('click', function(){checkPanles()})
+document.querySelector('#delete').addEventListener('click', function(){delBufRight();updatePanels()})
+
+</script>
+</body>
+</html>
